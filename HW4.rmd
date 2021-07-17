@@ -118,12 +118,10 @@ Though slightly skewed, they do seem normally distributed.
 
 Now let's actually generate the box plot. I am providing the skeleton of the code you'll need, you just need to fill in the variables! Make sure you run the code block with "melt" before completing your code portion. Once you've updated the scores table using melt, take another look at it. Change <table name> to the correct name, and set x= to x=<independent/predictor column name> and y= to y=<dependent/output column name>.
 
-[your answer here]
-
 ```{r q3cSetup}
 # this first command restructures the data in a way that makes it possible to use ggplot. You can take a look at what happened here if you like!
 melted.scores.table <- melt(scores.table, variable.name = "handed", value.name = "score")
-melted.scores.table
+head(melted.scores.table)
 ```
 
 

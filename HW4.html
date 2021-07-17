@@ -250,112 +250,17 @@ scores.table &lt;- read.csv(&quot;test_scores.csv&quot;)</code></pre>
 Now let’s actually generate the box plot. I am providing the skeleton of the code you’ll need, you just need to fill in the variables! Make sure you run the code block with “melt” before completing your code portion. Once you’ve updated the scores table using melt, take another look at it. Change
 <table name>
 <p>to the correct name, and set x= to x=<independent predictor column name> and y= to y=<dependent output column name>.</p>
-<p>[your answer here]</p>
 <pre class="r"><code># this first command restructures the data in a way that makes it possible to use ggplot. You can take a look at what happened here if you like!
 melted.scores.table &lt;- melt(scores.table, variable.name = &quot;handed&quot;, value.name = &quot;score&quot;)</code></pre>
 <pre><code>## No id variables; using all as measure variables</code></pre>
-<pre class="r"><code>melted.scores.table</code></pre>
-<pre><code>##           handed     score
-## 1   right_handed  88.02528
-## 2   right_handed  83.89712
-## 3   right_handed  83.01783
-## 4   right_handed 100.35998
-## 5   right_handed  84.84753
-## 6   right_handed  84.65710
-## 7   right_handed  80.90217
-## 8   right_handed  94.61166
-## 9   right_handed  99.09137
-## 10  right_handed 104.35120
-## 11  right_handed 104.17477
-## 12  right_handed  88.06686
-## 13  right_handed  97.48403
-## 14  right_handed  94.04638
-## 15  right_handed  87.95505
-## 16  right_handed  92.83767
-## 17  right_handed  96.83877
-## 18  right_handed  81.69566
-## 19  right_handed  83.93799
-## 20  right_handed  87.42387
-## 21  right_handed  87.28346
-## 22  right_handed  83.06321
-## 23  right_handed  96.69218
-## 24  right_handed  90.84593
-## 25  right_handed  87.21300
-## 26  right_handed  81.38491
-## 27  right_handed  93.54646
-## 28  right_handed  87.05283
-## 29  right_handed  88.09740
-## 30  right_handed  89.57128
-## 31  right_handed  89.51273
-## 32  right_handed 100.54025
-## 33  right_handed  93.97398
-## 34  right_handed  93.76643
-## 35  right_handed  84.97080
-## 36  right_handed  88.45494
-## 37  right_handed  90.90778
-## 38  right_handed  94.84067
-## 39  right_handed  83.70795
-## 40  right_handed  91.04215
-## 41  right_handed  92.38217
-## 42  right_handed  90.06321
-## 43  right_handed  87.85704
-## 44  right_handed  81.96548
-## 45  right_handed  92.67601
-## 46  right_handed  96.73724
-## 47  right_handed  95.91838
-## 48  right_handed  88.84154
-## 49  right_handed  87.47613
-## 50  right_handed  86.14027
-## 51   left_handed  84.66375
-## 52   left_handed  92.12920
-## 53   left_handed  79.18894
-## 54   left_handed  99.88336
-## 55   left_handed  89.30955
-## 56   left_handed  89.80432
-## 57   left_handed  90.01132
-## 58   left_handed  91.54916
-## 59   left_handed  91.41541
-## 60   left_handed  90.87787
-## 61   left_handed  98.43667
-## 62   left_handed  94.68561
-## 63   left_handed  94.94353
-## 64   left_handed  87.50711
-## 65   left_handed  85.55321
-## 66   left_handed  91.43159
-## 67   left_handed  88.06673
-## 68   left_handed  97.68011
-## 69   left_handed  92.53511
-## 70   left_handed  97.51654
-## 71   left_handed  94.07240
-## 72   left_handed  88.33921
-## 73   left_handed  82.29079
-## 74   left_handed  87.40576
-## 75   left_handed  92.73225
-## 76   left_handed  88.00499
-## 77   left_handed  86.74139
-## 78   left_handed  93.86720
-## 79   left_handed  95.79380
-## 80   left_handed  95.50991
-## 81   left_handed  93.26066
-## 82   left_handed  98.55252
-## 83   left_handed  93.98015
-## 84   left_handed  88.24613
-## 85   left_handed  88.26052
-## 86   left_handed  92.39266
-## 87   left_handed  93.75405
-## 88   left_handed  96.16220
-## 89   left_handed  86.73092
-## 90   left_handed  91.35130
-## 91   left_handed  90.18647
-## 92   left_handed  98.26342
-## 93   left_handed  97.13462
-## 94   left_handed  86.83036
-## 95   left_handed  92.97203
-## 96   left_handed  90.98973
-## 97   left_handed  89.85985
-## 98   left_handed  85.97797
-## 99   left_handed  94.15903
-## 100  left_handed  91.98620</code></pre>
+<pre class="r"><code>head(melted.scores.table)</code></pre>
+<pre><code>##         handed     score
+## 1 right_handed  88.02528
+## 2 right_handed  83.89712
+## 3 right_handed  83.01783
+## 4 right_handed 100.35998
+## 5 right_handed  84.84753
+## 6 right_handed  84.65710</code></pre>
 <pre class="r"><code># Update code below with the correct table and x and y values
 # the table name is a little different now! (see the code block above)
 # if you&#39;re confused about aes(x,y) look at the ggplot documentation and at the way the new table is structured
